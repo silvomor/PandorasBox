@@ -30,7 +30,7 @@ def insertionSort(lst):
             i-=1
     return lst
 
-
+# Merge sort with extra space
 def merge(lst1, lst2):
     n, m = len(lst1), len(lst2)
     p1, p2 = 0, 0
@@ -56,9 +56,46 @@ def mergeSort(lst):
     left = mergeSort(lst[:m])
     right = mergeSort(lst[m:])
 
-    merge(left, right)
+    return merge(left, right)
+
+#  Merge sort without extra space
+def mergeNoSpace(l1, l2, lst):
+    len_l1 = len(l1)
+    len_l2 = len(l2)
+    i, j, k = 0, 0, 0
+
+    while i<len_l1 and j<len_l2:
+        if l1[i] <= l2[j]:
+            lst[k] = l1[i]
+            i+=1
+        else:
+            lst[k] = l2[j]
+            j+=1
+        k+=1
+    
+    while i<len_l1:
+        lst[k] = l1[i]
+        i += 1
+        k += 1
+
+    while j<len_l2:
+        lst[k] = l2[j]
+        j += 1
+        k += 1
 
 
+def mergeSortNoSpace(lst):
+    if len(lst) <=1:
+        return
+    m = len(lst)//2
+
+    lft = lst[:m]
+    rgt = lst[m:]
+
+    mergeSortNoSpace(lft)
+    mergeSortNoSpace(rgt)
+
+    mergeNoSpace(lft, rgt, lst)
 
 # lst = [int(i) for i in input().split()]
 # lst = [1, 4, 5, 9, 7, 8, 6, 3, 1, 2, 3]
@@ -66,5 +103,6 @@ def mergeSort(lst):
 # # print(selctionSort(lst))
 # # print(bubbleSort(lst))
 # print(insertionSort(lst))
-
-print(mergeSort([5,1,4,6,8,5,4,1,3,2,4]))
+arr = [5,1,4,6,8,5,4,1,3,2,4]
+mergeSortNoSpace(arr)
+print(arr)
