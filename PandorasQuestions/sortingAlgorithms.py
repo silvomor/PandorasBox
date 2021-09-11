@@ -103,6 +103,6 @@ def mergeSortNoSpace(lst):
 # # print(selctionSort(lst))
 # # print(bubbleSort(lst))
 # print(insertionSort(lst))
-arr = [5,1,4,6,8,5,4,1,3,2,4]
-mergeSortNoSpace(arr)
-print(arr)
+# arr = [5,1,4,6,8,5,4,1,3,2,4]
+# mergeSortNoSpace(arr)
+# print(arr)
