@@ -1,3 +1,4 @@
+# Gives Binary Numbers
 def giveBinary(n):
     binary = []
     while n>0:
@@ -6,6 +7,7 @@ def giveBinary(n):
     binary.reverse()
     return binary
 
+# checks for Armstrong number
 def isArmstrong(n):
     total = 0
     for i in str(n):
@@ -14,7 +16,7 @@ def isArmstrong(n):
         return True
     return False
 
-
+# Checks for Prime number
 def isPrime(n):
     print('checking...', n)
     if n<=1:
@@ -28,6 +30,7 @@ def isPrime(n):
             return False
     return True
 
+# Returns prime numbers in a given range
 def giveMePrime(num1, num2):
     prime = []
     counter = 0
@@ -41,7 +44,7 @@ def giveMePrime(num1, num2):
                 prime.append(num)
     return prime, counter
 
-
+# returns fibonacci number
 def nthFibonacci(n):
     temp = [0, 1]
     if n == 0:
